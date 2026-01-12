@@ -11,7 +11,7 @@ module hub './modules/hub-vnet.bicep' = {
 
 
 
-module spokes './modules/spoke-network.bicep' = {
+module spokes './modules/spoke-vnet.bicep' = {
   name: 'spokes'
   dependsOn: [ hub ]
   params: {
