@@ -1,0 +1,24 @@
+name: Deploy Azure Prod
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Deploy Bicep
+      run: |
+        az deployment group create \
+          --resource-group rg-prod-hub \
+          --template-file main.bicep \
+          --parameters parameters/prod.bicepparam
