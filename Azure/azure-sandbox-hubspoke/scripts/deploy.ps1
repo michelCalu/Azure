@@ -13,3 +13,4 @@ New-AzResourceGroupDeployment `
   -ResourceGroupName $ResourceGroupName `
   -TemplateFile "../bicep/main.bicep" `
   -TemplateParameterFile "../parameters/sandbox.parameters.json"
+ 
