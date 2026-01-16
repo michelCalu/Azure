@@ -4,5 +4,5 @@ AZ-700
 
 
 
-test content
+test pipelining
 
