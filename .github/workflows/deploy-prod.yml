@@ -21,5 +21,4 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: Deploy Bicep
-      run: |
-        az deployment group create --resource-group rg-prod-hub --template-file main.bicep --parameters parameters/prod.bicepparam
+      run: az deployment group create --resource-group rg-prod-hub --template-file main.bicep --parameters parameters/prod.bicepparam
